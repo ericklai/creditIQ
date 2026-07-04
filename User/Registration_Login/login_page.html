@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content= "width = device-width, initial-scale = 1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css"> 
+        <link rel="icon" href="images/logo.png">
+    </head>
+    <body>
+
+<nav class="nav_bar">
+
+    <div class="logo">
+        CreditIQ
+    </div>
+
+    <ul>
+
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#">About</a></li>
+
+        <li><a href="register.html">Register</a></li>
+
+    </ul>
+
+</nav>
+
+<section class="login-section">
+
+    <div class="left-side">
+
+        <h1>Welcome Back.</h1>
+
+        <p>
+            Your financial journey starts here.
+            Manage your credit profile securely
+            and confidently.
+        </p>
+
+    </div>
+
+    <div class="right-side">
+
+        <div class="login-card">
+
+            <h2>Login</h2>
+
+            <p>Continue to your dashboard</p>
+
+            <div id="error-message">
+                Invalid username or password.
+            </div>
+
+            <form action="login.php" method="POST">
+
+                <div class="input-box">
+
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter username"
+                        required>
+
+                </div>
+
+                <div class="input-box password-box">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter password"
+                        required>
+
+                    <span id="togglePassword">
+                        👁
+                    </span>
+
+                </div>
+
+                <div class="options">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="forgot_password.html">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+                <button>
+
+                    Login
+
+                </button>
+
+                <p class="register">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+
+                        Register
+
+                    </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    const togglePassword = document.getElementById("togglePassword");
+    const password = document.getElementById("password");
+    const error = document.getElementById("error-message");
+
+    if (togglePassword && password) {
+        togglePassword.onclick = () => {
+            if (password.type === "password") {
+                password.type = "text";
+                togglePassword.innerHTML = "🙈";
+            } else {
+                password.type = "password";
+                togglePassword.innerHTML = "👁";
+            }
+        };
+    }
+
+    if (error && window.location.search.includes("error=1")) {
+        error.style.display = "block";
+    }
+</script>
+
+</body>
+</html>

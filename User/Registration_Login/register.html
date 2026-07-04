@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content= "width = device-width, initial-scale = 1.0">
+        <title>Register</title>
+        <link rel="stylesheet" href="style.css"> 
+        <link rel="icon" href="images/logo.png">
+    </head>
+    <body>
+        <nav class="nav_bar">
+            <div class="logo">CreditIQ</div>
+            <ul>
+                <li><a href="login_page.html" class="nav_link">Login</a></li>
+                <li><a href="register.html" class="nav_link active">Register</a></li>
+            </ul>
+        </nav>
+        <div class="center-wrapper">
+        <div class="login-container">
+            <h2>Welcome</h2>
+            <h3>Register Here</h3>
+            <!-- Error message if username exists -->
+            <div id="error-message" style="color: #d90429; font-weight: bold; display: none; margin-bottom: 10px;">Username already exists.</div>
+            <form action = "register.php" method = "post">
+                <div class="input-container">
+                    <label>First Name:</label>
+                    <input type="text" name="first_name" required>
+                </div>
+                <div class="input-container">    
+                    <label>Last Name:</label>
+                    <input type="text" name="last_name" required>
+                </div>
+                <div class="input-container">    
+                    <label>Username:</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="input-container">
+                    <label>Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <button class="login_btn" type="submit">Register</button>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="remember_me" value="1">
+                    Remember me
+                  </label>
+                </div>
+                <p>Already have an account? <a href="login_page.html">Login</a></p>
+            </form>
+        </div>
+        </div>
+        <script>
+        // Show error message if error=exists in URL
+        if (window.location.search.includes('error=exists')) {
+            document.getElementById('error-message').style.display = 'block';
+        }
+        </script>
+    </body>
+</html>
