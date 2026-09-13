@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="financial_info.css">
+
+    <title>CreditIQ - Financial Information</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>CreditIQ</h1>
+        <p>Smart Credit Scoring & Loan Eligibility Assessment</p>
+    </header>
+
+    <main>
+
+        <h2>Financial Information</h2>
+
+        <p>
+            Please provide accurate information about your current
+            financial situation. This information will be used to
+            calculate your CreditIQ score and assess your loan eligibility.
+        </p>
+
+        <form id="financialForm">
+
+            <section>
+
+                <h3>1. Income Information</h3>
+
+                <label for="monthlyIncome">
+                    Monthly Income (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="monthlyIncome"
+                    name="monthlyIncome"
+                    placeholder="e.g. 30000"
+                    min="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="otherIncome">
+                    Other Monthly Income (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="otherIncome"
+                    name="otherIncome"
+                    placeholder="e.g. 5000"
+                    min="0"
+                    value="0"
+                >
+
+                <br><br>
+
+                <label for="incomeSource">
+                    Primary Income Source
+                </label>
+                <br>
+
+                <select id="incomeSource" name="incomeSource" required>
+
+                    <option value="">
+                        Select income source
+                    </option>
+
+                    <option value="salary">
+                        Salary
+                    </option>
+
+                    <option value="business">
+                        Business
+                    </option>
+
+                    <option value="freelance">
+                        Freelance
+                    </option>
+
+                    <option value="casual">
+                        Casual Work
+                    </option>
+
+                    <option value="agriculture">
+                        Agriculture
+                    </option>
+
+                    <option value="family">
+                        Family Support
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <label for="empStatus">
+                    Employment Status
+                </label>
+                <br>
+
+                <select id="empStatus" name="empStatus" required>
+
+                    <option value="">
+                        Select employment status
+                    </option>
+
+                    <option value="employed">
+                        Employed
+                    </option>
+
+                    <option value="self-employed">
+                        Self-Employed
+                    </option>
+
+                    <option value="student">
+                        Student
+                    </option>
+
+                    <option value="casual">
+                        Casual Worker
+                    </option>
+
+                    <option value="unemployed">
+                        Unemployed
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <label for="empDuration">
+                    How long have you had your current income source?
+                </label>
+                <br>
+
+                <select id="empDuration" name="empDuration" required>
+
+                    <option value="">
+                        Select duration
+                    </option>
+
+                    <option value="lessThan1Year">
+                        Less than 1 year
+                    </option>
+
+                    <option value="1to3Years">
+                        1 - 3 years
+                    </option>
+
+                    <option value="moreThan3Years">
+                        More than 3 years
+                    </option>
+
+                </select>
+
+            </section>
+
+
+            <br>
+<!-- 2. MONTHLY EXPENSES -->
+
+            <section>
+
+                <h3>2. Monthly Expenses</h3>
+
+                <p>
+                    Enter your average monthly expenses.
+                </p>
+
+                <label for="rent">
+                    Rent / Housing (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="rent"
+                    name="rent"
+                    placeholder="e.g. 10000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="food">
+                    Food & Groceries (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="food"
+                    name="food"
+                    placeholder="e.g. 8000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="transport">
+                    Transport (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="transport"
+                    name="transport"
+                    placeholder="e.g. 3000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="utilities">
+                    Utilities (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="utilities"
+                    name="utilities"
+                    placeholder="e.g. 2000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="otherExpenses">
+                    Other Monthly Expenses (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="otherExpenses"
+                    name="otherExpenses"
+                    placeholder="e.g. 2000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+            </section>
+
+
+            <br>
+
+
+            <!-- 3. EXISTING DEBTS -->
+
+            <section>
+
+                <h3>3. Existing Debts</h3>
+
+                <label for="hasDebt">
+                    Do you currently have any loans or debts?
+                </label>
+                <br>
+
+                <select id="hasDebt" name="hasDebt" required>
+
+                    <option value="">
+                        Select option
+                    </option>
+
+                    <option value="yes">
+                        Yes
+                    </option>
+
+                    <option value="no">
+                        No
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <label for="totalDebt">
+                    Total Outstanding Debt (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="totalDebt"
+                    name="totalDebt"
+                    placeholder="e.g. 20000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="monthlyDebtPayment">
+                    Monthly Debt Repayment (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="monthlyDebtPayment"
+                    name="monthlyDebtPayment"
+                    placeholder="e.g. 3000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="activeLoans">
+                    Number of Active Loans
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="activeLoans"
+                    name="activeLoans"
+                    placeholder="e.g. 2"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="missedPayments">
+                    Have you missed any loan payments?
+                </label>
+                <br>
+
+                <select id="missedPayments" name="missedPayments" required>
+
+                    <option value="">
+                        Select option
+                    </option>
+
+                    <option value="never">
+                        Never
+                    </option>
+
+                    <option value="once">
+                        Once
+                    </option>
+
+                    <option value="few">
+                        A few times
+                    </option>
+
+                    <option value="frequently">
+                        Frequently
+                    </option>
+
+                </select>
+
+            </section>
+
+
+            <br>
+
+            <!-- 4. SAVINGS INFORMATION              -->
+
+            <section>
+
+                <h3>4. Savings & Financial Behaviour</h3>
+
+                <label for="currentSavings">
+                    Current Savings (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="currentSavings"
+                    name="currentSavings"
+                    placeholder="e.g. 15000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="monthlySavings">
+                    Average Monthly Savings (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="monthlySavings"
+                    name="monthlySavings"
+                    placeholder="e.g. 5000"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+                <br><br>
+
+                <label for="savingFrequency">
+                    How often do you save?
+                </label>
+                <br>
+
+                <select
+                    id="savingFrequency"
+                    name="savingFrequency"
+                    required
+                >
+
+                    <option value="">
+                        Select frequency
+                    </option>
+
+                    <option value="daily">
+                        Daily
+                    </option>
+
+                    <option value="weekly">
+                        Weekly
+                    </option>
+
+                    <option value="monthly">
+                        Monthly
+                    </option>
+
+                    <option value="occasionally">
+                        Occasionally
+                    </option>
+
+                    <option value="never">
+                        I don't save regularly
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <label for="emergencyFund">
+                    Do you have an emergency fund?
+                </label>
+                <br>
+
+                <select id="emergencyFund" name="emergencyFund" required>
+
+                    <option value="">
+                        Select option
+                    </option>
+
+                    <option value="yes">
+                        Yes
+                    </option>
+
+                    <option value="no">
+                        No
+                    </option>
+
+                </select>
+
+            </section>
+
+
+            <br>
+
+            <!-- 5. BUSINESS INFORMATION  -->
+
+            <section>
+
+                <h3>5. Business Information</h3>
+
+                <label for="businessOwner">
+                    Do you currently operate a business?
+                </label>
+                <br>
+
+                <select
+                    id="businessOwner"
+                    name="businessOwner"
+                    required
+                >
+
+                    <option value="">
+                        Select option
+                    </option>
+
+                    <option value="yes">
+                        Yes
+                    </option>
+
+                    <option value="no">
+                        No
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <label for="businessType">
+                    Business Type
+                </label>
+                <br>
+
+                <select id="businessType" name="businessType">
+
+                    <option value="">
+                        Select business type
+                    </option>
+
+                    <option value="retail">
+                        Retail
+                    </option>
+
+                    <option value="wholesale">
+                        Wholesale
+                    </option>
+
+                    <option value="services">
+                        Services
+                    </option>
+
+                    <option value="agriculture">
+                        Agriculture
+                    </option>
+
+                    <option value="online">
+                        Online Business
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <label for="businessDuration">
+                    How long has the business been operating?
+                </label>
+                <br>
+
+                <select
+                    id="businessDuration"
+                    name="businessDuration"
+                >
+
+                    <option value="">
+                        Select duration
+                    </option>
+
+                    <option value="lessThan1Year">
+                        Less than 1 year
+                    </option>
+
+                    <option value="1to3Years">
+                        1 - 3 years
+                    </option>
+
+                    <option value="moreThan3Years">
+                        More than 3 years
+                    </option>
+
+                </select>
+
+            </section>
+
+
+            <br>
+
+            <!-- 6. LOAN REQUEST -->
+
+            <section>
+
+                <h3>6. Loan Request</h3>
+
+                <label for="loanAmount">
+                    Requested Loan Amount (KSh)
+                </label>
+                <br>
+
+                <input
+                    type="number"
+                    id="loanAmount"
+                    name="loanAmount"
+                    placeholder="e.g. 50000"
+                    min="1"
+                    required
+                >
+
+                <br><br>
+
+                <label for="loanPurpose">
+                    Purpose of the Loan
+                </label>
+                <br>
+
+                <select id="loanPurpose" name="loanPurpose" required>
+
+                    <option value="">
+                        Select loan purpose
+                    </option>
+
+                    <option value="business">
+                        Business
+                    </option>
+
+                    <option value="education">
+                        Education
+                    </option>
+
+                    <option value="emergency">
+                        Emergency
+                    </option>
+
+                    <option value="medical">
+                        Medical
+                    </option>
+
+                    <option value="housing">
+                        Housing
+                    </option>
+
+                    <option value="personal">
+                        Personal Use
+                    </option>
+
+                    <option value="agriculture">
+                        Agriculture
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+                <br><br>
+
+                <label for="repaymentPeriod">
+                    Preferred Repayment Period
+                </label>
+                <br>
+
+                <select
+                    id="repaymentPeriod"
+                    name="repaymentPeriod"
+                    required
+                >
+
+                    <option value="">
+                        Select repayment period
+                    </option>
+
+                    <option value="3">
+                        3 Months
+                    </option>
+
+                    <option value="6">
+                        6 Months
+                    </option>
+
+                    <option value="12">
+                        12 Months
+                    </option>
+
+                    <option value="18">
+                        18 Months
+                    </option>
+
+                    <option value="24">
+                        24 Months
+                    </option>
+
+                </select>
+
+            </section>
+
+
+            <br>
+
+            <!-- 7. DECLARATION  -->
+
+            <section>
+
+                <h3>7. Declaration</h3>
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="declaration"
+                        name="declaration"
+                        required
+                    >
+
+                    I confirm that the financial information
+                    provided is accurate and complete.
+
+                </label>
+
+            </section>
+
+
+            <br>
+
+
+            <!-- SUBMIT  -->
+
+            <button type="submit">
+                Submit Financial Information
+            </button>
+
+            <button type="reset">
+                Clear Form
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 CreditIQ. Smart financial assessment.
+        </p>
+
+    </footer>
+
+
+    <script src="financial_info.js"></script>
+
+</body>
+
+</html>
+```
