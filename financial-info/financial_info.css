@@ -344,3 +344,75 @@ footer {
         font-size: 24px;
     }
 }
+
+/* =========================================
+   FINANCIAL SUMMARY
+   ========================================= */
+
+.financial-summary {
+    background: var(--navy);
+    border: 1px solid var(--gold);
+}
+
+.financial-summary h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.financial-summary > p {
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+
+.metrics {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.metric {
+    background: var(--input-blue);
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.metric span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+
+.metric strong {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 21px;
+}
+
+
+/* =========================================
+   SUMMARY - MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+}

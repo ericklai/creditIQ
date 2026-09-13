@@ -1,0 +1,351 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CreditIQ - Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- NAVBAR -->
+    <!-- ============================= -->
+
+    <header>
+
+        <div class="logo">
+            CreditIQ
+        </div>
+
+        <nav>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="financial.html">Financial Profile</a>
+            <a href="report.html">Reports</a>
+        </nav>
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- MAIN DASHBOARD -->
+    <!-- ============================= -->
+
+    <main>
+
+        <!-- Welcome -->
+
+        <section class="welcome">
+
+            <div>
+                <p class="small-title">USER DASHBOARD</p>
+
+                <h1>
+                    Welcome back, <span id="username">User</span>.
+                </h1>
+
+                <p>
+                    Manage your financial profile and monitor
+                    your CreditIQ assessment.
+                </p>
+            </div>
+
+            <div class="profile-icon">
+                U
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- SCORE CARDS -->
+        <!-- ============================= -->
+
+        <section class="cards">
+
+            <div class="card score-card">
+
+                <p>Credit Score</p>
+
+                <h2 id="creditScore">
+                    --
+                </h2>
+
+                <span>
+                    Complete your assessment
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <p>Risk Level</p>
+
+                <h2 id="riskLevel">
+                    --
+                </h2>
+
+                <span>
+                    Based on your financial profile
+                </span>
+
+            </div>
+
+
+            <div class="card">
+
+                <p>Loan Eligibility</p>
+
+                <h2 id="eligibility">
+                    Pending
+                </h2>
+
+                <span>
+                    Assessment required
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- PROFILE PROGRESS -->
+        <!-- ============================= -->
+
+        <section class="profile-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-title">FINANCIAL PROFILE</p>
+
+                    <h2>
+                        Complete your financial profile
+                    </h2>
+
+                    <p>
+                        Provide your financial information to allow
+                        CreditIQ to calculate your credit score.
+                    </p>
+                </div>
+
+                <div class="progress-number">
+                    0%
+                </div>
+
+            </div>
+
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+
+
+            <div class="profile-status">
+
+                <div>
+                    <strong>Profile Status</strong>
+
+                    <p>
+                        Your financial information has not been submitted yet.
+                    </p>
+                </div>
+
+                <a href="financial.html" class="primary-btn">
+                    Complete Profile
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- LOAN ASSESSMENT -->
+        <!-- ============================= -->
+
+        <section class="assessment">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-title">LOAN ASSESSMENT</p>
+
+                    <h2>
+                        Check your loan eligibility
+                    </h2>
+
+                    <p>
+                        CreditIQ analyzes your financial information
+                        and provides an estimated loan recommendation.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="assessment-content">
+
+                <div class="assessment-item">
+
+                    <span>Requested Loan</span>
+
+                    <strong>
+                        KSh 0
+                    </strong>
+
+                </div>
+
+
+                <div class="assessment-item">
+
+                    <span>Recommended Loan</span>
+
+                    <strong>
+                        KSh 0
+                    </strong>
+
+                </div>
+
+
+                <div class="assessment-item">
+
+                    <span>Assessment Status</span>
+
+                    <strong>
+                        Not Started
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a href="financial.html" class="primary-btn">
+                Start Assessment
+            </a>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- QUICK ACTIONS -->
+        <!-- ============================= -->
+
+        <section class="quick-actions">
+
+            <p class="small-title">
+                QUICK ACTIONS
+            </p>
+
+            <div class="action-grid">
+
+                <a href="financial.html" class="action-card">
+
+                    <div class="action-icon">
+                        +
+                    </div>
+
+                    <div>
+                        <h3>
+                            Financial Information
+                        </h3>
+
+                        <p>
+                            Add or update your financial details.
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <a href="report.html" class="action-card">
+
+                    <div class="action-icon">
+                        ↗
+                    </div>
+
+                    <div>
+                        <h3>
+                            View Reports
+                        </h3>
+
+                        <p>
+                            View your credit assessment reports.
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <a href="profile.html" class="action-card">
+
+                    <div class="action-icon">
+                        ⚙
+                    </div>
+
+                    <div>
+                        <h3>
+                            Account Settings
+                        </h3>
+
+                        <p>
+                            Manage your CreditIQ account.
+                        </p>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer>
+
+        <p>
+            © 2026 CreditIQ. Smart Credit Scoring & Loan
+            Eligibility Assessment.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function logout() {
+
+            const confirmLogout =
+                confirm("Are you sure you want to logout?");
+
+            if (confirmLogout) {
+
+                window.location.href = "login.html";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
