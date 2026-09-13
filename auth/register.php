@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
     $usersData['users'] = $users;
     file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
-    header('Location: login_page.html?registered=1');
+    header('Location: login.html?registered=1');
     exit();
 }
 ?>

@@ -7,7 +7,6 @@ def assess_customer(
     previous_loans_count,
     previous_loans_repaid,
     late_payments,
-    
 ):
     # Input validation
     if monthly_income <= 0:
@@ -22,22 +21,24 @@ def assess_customer(
         raise ValueError("Previous loans count cannot be negative.")
     if previous_loans_repaid < 0:
         raise ValueError("Previous loans repaid cannot be negative.")
+    if previous_loans_repaid > previous_loans_count:
+        raise ValueError("Previous loans repaid cannot exceed previous loans count.")
     if late_payments < 0:
         raise ValueError("Late payments cannot be negative.")
 
     disposable_income = monthly_income - monthly_expenses
-    debt_to_income = existing_debts / monthly_income 
+    debt_to_income = existing_debts / monthly_income
     if debt_to_income < 0.30:
         debt_assesment = "good"
     else:
-        debt_assesment = "high"  # noqa: F841, RUF100
+        debt_assesment = "high"
 
     if employment_status == "employed" and employment_months > 12:
         employment_assesment = "stable"
     else:
         employment_assesment = "unstable"
     if previous_loans_count == 0:
-        repayment_rate = "none"
+        repayment_rate = None
         repayment_assessment = "no history"
     else:
         repayment_rate = previous_loans_repaid / previous_loans_count
@@ -48,7 +49,7 @@ def assess_customer(
     if disposable_income >= monthly_income * 0.30:
         affordability_assessment = "good"
     else:
-        affordability_assessment = "low"  # noqa: F841, RUF100
+        affordability_assessment = "low"
     risk_flags = []
     if debt_assesment == "good" and employment_assesment == "stable":
         overall_assessment = "good"
@@ -90,28 +91,42 @@ def assess_customer(
         "rejection_reasons": risk_flags if loan_decision == "rejected" else [],
     }
 
-results = assess_customer(monthly_income=float(input("Enter monthly income: ")),
-                          monthly_expenses=float(input("Enter monthly expenses: ")),
-                          existing_debts=float(input("Enter existing debts: ")),
-                          employment_status=input("Enter employment status: "),
-                          employment_months=int(input("Enter employment months: ")),
-                          previous_loans_count=int(input("Enter previous loans count: ")),
-                          previous_loans_repaid=int(input("Enter previous loans repaid: ")),
-                          late_payments=int(input("Enter late payments: ")))
 
-print("\n====CREDIT ASSESSMENT RESULTS====\n")
-print(f"Disposable Income:ksh {results['disposable_income']:.2f}")
-print(f"Debt to Income Ratio: {results['debt_to_income']:.2f}")
-print(f"Employment Status: {results['employment_status']}")
-print(f"Employment Months: {results['employment_months']}")
-print(f"Employment Assessment: {results['employment_assessment']}")
-print(f"Repayment Rate: {results['repayment_rate']:.2f}")
-print(f"Repayment Assessment: {results['repayment_assessment']}")
-print(f"Affordability Assessment: {results['affordability_assessment']}")
-print(f"Overall Assessment: {results['overall_assessment']}")
-print(f"Loan Decision: {results['loan_decision']}")
-print(f"Max Loan Amount: ksh {results['max_loan_amount']:.2f}")
-print(f"Risk Flags: {', '.join(results['risk_flags']) if results['risk_flags'] else 'None'}")
-print(f"Rejection Reasons: {', '.join(results['rejection_reasons']) if results['rejection_reasons'] else 'None'}")
-print("==================================")
+def main():
+    results = assess_customer(
+        monthly_income=float(input("Enter monthly income: ")),
+        monthly_expenses=float(input("Enter monthly expenses: ")),
+        existing_debts=float(input("Enter existing debts: ")),
+        employment_status=input("Enter employment status: "),
+        employment_months=int(input("Enter employment months: ")),
+        previous_loans_count=int(input("Enter previous loans count: ")),
+        previous_loans_repaid=int(input("Enter previous loans repaid: ")),
+        late_payments=int(input("Enter late payments: ")),
+    )
+
+    repayment_rate = results["repayment_rate"]
+    repayment_display = "None" if repayment_rate is None else f"{repayment_rate:.2f}"
+
+    print("\n====CREDIT ASSESSMENT RESULTS====\n")
+    print(f"Disposable Income: ksh {results['disposable_income']:.2f}")
+    print(f"Debt to Income Ratio: {results['debt_to_income']:.2f}")
+    print(f"Employment Status: {results['employment_status']}")
+    print(f"Employment Months: {results['employment_months']}")
+    print(f"Employment Assessment: {results['employment_assessment']}")
+    print(f"Repayment Rate: {repayment_display}")
+    print(f"Repayment Assessment: {results['repayment_assessment']}")
+    print(f"Affordability Assessment: {results['affordability_assessment']}")
+    print(f"Overall Assessment: {results['overall_assessment']}")
+    print(f"Loan Decision: {results['loan_decision']}")
+    print(f"Max Loan Amount: ksh {results['max_loan_amount']:.2f}")
+    print(f"Risk Flags: {', '.join(results['risk_flags']) if results['risk_flags'] else 'None'}")
+    print(
+        "Rejection Reasons: "
+        f"{', '.join(results['rejection_reasons']) if results['rejection_reasons'] else 'None'}"
+    )
+    print("==================================")
+
+
+if __name__ == "__main__":
+    main()
 

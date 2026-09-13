@@ -51,11 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $_SESSION['username'] = $username;
-        header('Location: ../Dashboard/dashboard.html');
+        header('Location: ../financial-info/index.html');
         exit();
     }
 
-    header('Location: login_page.html?error=1');
+    header('Location: login.html?error=1');
     exit();
 }
 ?>
