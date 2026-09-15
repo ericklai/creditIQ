@@ -20,7 +20,8 @@
             <h3>Register Here</h3>
             <!-- Error message if username exists -->
             <div id="error-message" style="color: #d90429; font-weight: bold; display: none; margin-bottom: 10px;">Username already exists.</div>
-            <form action = "register.php" method = "post">
+
+            <form action = "register.php" method = "POST">
                 <div class="input-container">
                     <label>First Name:</label>
                     <input type="text" name="first_name" required>
@@ -42,11 +43,15 @@
             </form>
         </div>
         </div>
+
+
         <script>
         // Show error message if error=exists in URL
         if (window.location.search.includes('error=exists')) {
             document.getElementById('error-message').style.display = 'block';
         }
         </script>
+
+
     </body>
 </html>
