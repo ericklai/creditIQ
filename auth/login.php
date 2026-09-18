@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $_SESSION['username'] = $username;
-        header('Location: ../financial-info/index.html');
+        header('Location: ../dashboard/dashboard.html');
         exit();
     }
 

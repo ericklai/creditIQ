@@ -1,0 +1,260 @@
+:root {
+    --navy: #111a35;
+    --dark-blue: #203252;
+    --input-blue: #34445f;
+    --gold: #ffc52e;
+    --gold-dark: #f5b900;
+    --background: #707583;
+    --white: #f1f3f7;
+    --text-light: #d9dde7;
+    --muted: #aeb6c6;
+    --border: #50617d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    min-height: 82px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 40px;
+}
+
+.logo {
+    margin-right: auto;
+    color: var(--gold);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--gold);
+}
+
+main {
+    width: 92%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.small-title {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.profile-hero,
+.profile-form,
+.summary-panel {
+    background: var(--dark-blue);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-hero {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 28px;
+    margin-bottom: 22px;
+}
+
+.avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 900;
+    flex: 0 0 auto;
+}
+
+.profile-hero h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.profile-hero p:not(.small-title) {
+    color: var(--text-light);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.9fr);
+    gap: 20px;
+}
+
+.profile-form,
+.summary-panel {
+    padding: 28px;
+}
+
+.section-heading h2 {
+    font-size: 22px;
+    margin-bottom: 22px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+label {
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 700;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--input-blue);
+    color: var(--white);
+    padding: 0 14px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(255, 197, 46, 0.12);
+}
+
+button,
+.primary-btn,
+.secondary-btn {
+    border-radius: 10px;
+    padding: 13px 22px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: var(--gold);
+    color: var(--navy);
+    cursor: pointer;
+    margin-top: 22px;
+}
+
+button:hover,
+.primary-btn:hover {
+    background: var(--gold-dark);
+}
+
+.save-message {
+    min-height: 20px;
+    color: var(--gold);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.snapshot-list {
+    display: grid;
+    gap: 12px;
+}
+
+.snapshot-list div {
+    background: var(--input-blue);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.snapshot-list span {
+    color: var(--muted);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.snapshot-list strong {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.panel-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.primary-btn {
+    background: var(--gold);
+    color: var(--navy);
+    text-align: center;
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+    color: var(--white);
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 24px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .layout,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .profile-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .profile-hero h1 {
+        font-size: 28px;
+    }
+}

@@ -24,8 +24,9 @@
 
         <nav>
             <a href="dashboard.html" class="active">Dashboard</a>
-            <a href="financial.html">Financial Profile</a>
-            <a href="report.html">Reports</a>
+            <a href="financial-info/financial.html">Financial Profile</a>
+            <a href="report/report.html">Reports</a>
+            <a href="profile/profile.html">User Profile</a>
         </nav>
 
         <button class="logout-btn" onclick="logout()">
@@ -139,7 +140,7 @@
                     </p>
                 </div>
 
-                <div class="progress-number">
+                <div class="progress-number" id="profileProgress">
                     0%
                 </div>
 
@@ -147,7 +148,7 @@
 
 
             <div class="progress-bar">
-                <div class="progress"></div>
+                <div class="progress" id="progressBar"></div>
             </div>
 
 
@@ -156,15 +157,14 @@
                 <div>
                     <strong>Profile Status</strong>
 
-                    <p>
+                    <p id="profileStatusText">
                         Your financial information has not been submitted yet.
                     </p>
                 </div>
 
-                <a href="financial.html" class="primary-btn">
+                <a href="financial-info/financial.html" class="primary-btn">
                     Complete Profile
                 </a>
-
             </div>
 
         </section>
@@ -195,7 +195,7 @@
 
                     <span>Requested Loan</span>
 
-                    <strong>
+                    <strong id="requestedLoan">
                         KSh 0
                     </strong>
 
@@ -206,7 +206,7 @@
 
                     <span>Recommended Loan</span>
 
-                    <strong>
+                    <strong id="recommendedLoan">
                         KSh 0
                     </strong>
 
@@ -217,7 +217,7 @@
 
                     <span>Assessment Status</span>
 
-                    <strong>
+                    <strong id="assessmentStatus">
                         Not Started
                     </strong>
 
@@ -226,7 +226,7 @@
             </div>
 
 
-            <a href="financial.html" class="primary-btn">
+            <a href="financial-info/financial.html" class="primary-btn">
                 Start Assessment
             </a>
 
@@ -241,7 +241,7 @@
 
             <div class="action-grid">
 
-                <a href="financial.html" class="action-card">
+                <a href="financial-info/financial.html" class="action-card">
 
                     <div class="action-icon">
                         +
@@ -260,7 +260,7 @@
                 </a>
 
 
-                <a href="report.html" class="action-card">
+                <a href="report/report.html" class="action-card">
 
                     <div class="action-icon">
                         ↗
@@ -279,7 +279,7 @@
                 </a>
 
 
-                <a href="profile.html" class="action-card">
+                <a href="profile/profile.html" class="action-card">
 
                     <div class="action-icon">
                         ⚙
@@ -314,22 +314,7 @@
     </footer>
 
 
-    <script>
-
-        function logout() {
-
-            const confirmLogout =
-                confirm("Are you sure you want to logout?");
-
-            if (confirmLogout) {
-
-                window.location.href = "login.html";
-
-            }
-
-        }
-
-    </script>
+    <script src="dashboard.js"></script>
 
 </body>
 

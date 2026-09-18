@@ -7,11 +7,11 @@ The platform aims to provide a simplified, intelligent, and accessible credit ev
 ## Project Structure
 
 - `auth/` - PHP login and registration pages.
-- `financial-info/` - Financial information form and related assets.
+- `dashboard/` - Dashboard, financial profile form, user profile, and report pages.
 - `assessment/` - Python credit assessment script.
 
 ## Run Locally
 
-- Open `financial-info/index.html` in a browser to view the financial form.
+- Open `dashboard/dashboard.html` in a browser to view the dashboard.
 - Serve `auth/` through a PHP-capable local server to test login and registration.
 - Run `python assessment/credit_assessment.py` to use the command-line assessment script.

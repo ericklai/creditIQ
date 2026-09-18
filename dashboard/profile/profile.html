@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditIQ - User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">CreditIQ</div>
+
+        <nav>
+            <a href="../dashboard.html">Dashboard</a>
+            <a href="../financial-info/financial.html">Financial Profile</a>
+            <a href="../report/report.html">Report</a>
+            <a href="profile.html" class="active">User Profile</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="profile-hero">
+            <div class="avatar" id="avatar">U</div>
+
+            <div>
+                <p class="small-title">USER PROFILE</p>
+                <h1 id="profileName">CreditIQ User</h1>
+                <p id="profileMeta">Profile details and financial readiness summary.</p>
+            </div>
+        </section>
+
+        <section class="layout">
+
+            <form id="profileForm" class="profile-form">
+                <div class="section-heading">
+                    <p class="small-title">ACCOUNT DETAILS</p>
+                    <h2>Personal information</h2>
+                </div>
+
+                <div class="form-grid">
+                    <label>
+                        Full Name
+                        <input type="text" id="fullName" placeholder="e.g. Jane Wanjiku">
+                    </label>
+
+                    <label>
+                        Username
+                        <input type="text" id="username" placeholder="e.g. jane">
+                    </label>
+
+                    <label>
+                        Email
+                        <input type="email" id="email" placeholder="e.g. jane@example.com">
+                    </label>
+
+                    <label>
+                        Phone
+                        <input type="tel" id="phone" placeholder="e.g. +254700000000">
+                    </label>
+
+                    <label>
+                        Location
+                        <input type="text" id="location" placeholder="e.g. Nairobi">
+                    </label>
+
+                    <label>
+                        Applicant Type
+                        <select id="applicantType">
+                            <option value="">Select applicant type</option>
+                            <option value="Employed">Employed</option>
+                            <option value="Self-Employed">Self-Employed</option>
+                            <option value="Business Owner">Business Owner</option>
+                            <option value="Student">Student</option>
+                            <option value="Casual Worker">Casual Worker</option>
+                        </select>
+                    </label>
+                </div>
+
+                <button type="submit">Save Profile</button>
+                <p id="saveMessage" class="save-message"></p>
+            </form>
+
+            <aside class="summary-panel">
+                <div class="section-heading">
+                    <p class="small-title">FINANCIAL SNAPSHOT</p>
+                    <h2>Latest assessment</h2>
+                </div>
+
+                <div class="snapshot-list">
+                    <div>
+                        <span>Credit Score</span>
+                        <strong id="creditScore">--</strong>
+                    </div>
+                    <div>
+                        <span>Risk Level</span>
+                        <strong id="riskLevel">Pending</strong>
+                    </div>
+                    <div>
+                        <span>Loan Decision</span>
+                        <strong id="loanDecision">Pending</strong>
+                    </div>
+                    <div>
+                        <span>Monthly Income</span>
+                        <strong id="monthlyIncome">KSh 0</strong>
+                    </div>
+                    <div>
+                        <span>Disposable Income</span>
+                        <strong id="disposableIncome">KSh 0</strong>
+                    </div>
+                    <div>
+                        <span>Last Updated</span>
+                        <strong id="lastUpdated">Never</strong>
+                    </div>
+                </div>
+
+                <div class="panel-actions">
+                    <a href="../financial-info/financial.html" class="secondary-btn">Update Financials</a>
+                    <a href="../report/report.html" class="primary-btn">Open Report</a>
+                </div>
+            </aside>
+
+        </section>
+
+    </main>
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

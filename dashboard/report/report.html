@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditIQ - Financial Report</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">CreditIQ</div>
+
+        <nav>
+            <a href="../dashboard.html">Dashboard</a>
+            <a href="../financial-info/financial.html">Financial Profile</a>
+            <a href="report.html" class="active">Report</a>
+            <a href="../profile/profile.html">User Profile</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="report-hero">
+            <div>
+                <p class="small-title">FINANCIAL REPORT</p>
+                <h1>Credit assessment summary</h1>
+                <p id="reportDate">No assessment submitted yet.</p>
+            </div>
+
+            <div class="score-panel">
+                <span>CreditIQ Score</span>
+                <strong id="creditScore">--</strong>
+                <p id="riskLevel">Pending</p>
+            </div>
+        </section>
+
+        <section id="emptyState" class="empty-state">
+            <h2>No financial report available</h2>
+            <p>Submit the financial profile form to generate a report.</p>
+            <a href="../financial-info/financial.html" class="primary-btn">Complete Financial Profile</a>
+        </section>
+
+        <section id="reportContent" class="report-content">
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <span>Total Income</span>
+                    <strong id="totalIncome">KSh 0</strong>
+                </div>
+
+                <div class="metric-card">
+                    <span>Total Expenses</span>
+                    <strong id="totalExpenses">KSh 0</strong>
+                </div>
+
+                <div class="metric-card">
+                    <span>Disposable Income</span>
+                    <strong id="disposableIncome">KSh 0</strong>
+                </div>
+
+                <div class="metric-card">
+                    <span>Monthly Debt Payment</span>
+                    <strong id="monthlyDebt">KSh 0</strong>
+                </div>
+            </div>
+
+            <section class="decision-band">
+                <div>
+                    <span>Loan Decision</span>
+                    <strong id="loanDecision">Pending</strong>
+                </div>
+
+                <div>
+                    <span>Requested Loan</span>
+                    <strong id="requestedLoan">KSh 0</strong>
+                </div>
+
+                <div>
+                    <span>Recommended Loan</span>
+                    <strong id="recommendedLoan">KSh 0</strong>
+                </div>
+            </section>
+
+            <section class="details-grid">
+                <div class="detail-card">
+                    <h2>Financial Ratios</h2>
+                    <dl>
+                        <div>
+                            <dt>Expense Ratio</dt>
+                            <dd id="expenseRatio">0%</dd>
+                        </div>
+                        <div>
+                            <dt>Debt-to-Income Ratio</dt>
+                            <dd id="debtRatio">0%</dd>
+                        </div>
+                        <div>
+                            <dt>Savings Rate</dt>
+                            <dd id="savingsRate">0%</dd>
+                        </div>
+                        <div>
+                            <dt>Loan Coverage</dt>
+                            <dd id="loanCoverage">0x</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="detail-card">
+                    <h2>Applicant Snapshot</h2>
+                    <dl>
+                        <div>
+                            <dt>Income Source</dt>
+                            <dd id="incomeSource">Not provided</dd>
+                        </div>
+                        <div>
+                            <dt>Employment Status</dt>
+                            <dd id="employmentStatus">Not provided</dd>
+                        </div>
+                        <div>
+                            <dt>Missed Payments</dt>
+                            <dd id="missedPayments">Not provided</dd>
+                        </div>
+                        <div>
+                            <dt>Emergency Fund</dt>
+                            <dd id="emergencyFund">Not provided</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="recommendations">
+                <div class="section-heading">
+                    <p class="small-title">RECOMMENDATIONS</p>
+                    <h2>Next best actions</h2>
+                </div>
+
+                <ul id="recommendationList"></ul>
+            </section>
+
+            <div class="actions">
+                <a href="../financial-info/financial.html" class="secondary-btn">Update Financial Profile</a>
+                <a href="../profile/profile.html" class="primary-btn">View User Profile</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="report.js"></script>
+
+</body>
+
+</html>

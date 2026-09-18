@@ -1,0 +1,280 @@
+:root {
+    --navy: #111a35;
+    --dark-blue: #203252;
+    --input-blue: #34445f;
+    --gold: #ffc52e;
+    --gold-dark: #f5b900;
+    --background: #707583;
+    --white: #f1f3f7;
+    --text-light: #d9dde7;
+    --muted: #aeb6c6;
+    --border: #50617d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    min-height: 82px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 40px;
+}
+
+.logo {
+    margin-right: auto;
+    color: var(--gold);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--gold);
+}
+
+main {
+    width: 92%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.small-title {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.report-hero {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.report-hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.report-hero p {
+    color: var(--text-light);
+}
+
+.score-panel,
+.empty-state,
+.metric-card,
+.decision-band,
+.detail-card,
+.recommendations {
+    background: var(--dark-blue);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.score-panel {
+    min-width: 220px;
+    padding: 24px;
+    text-align: center;
+}
+
+.score-panel span,
+.metric-card span,
+.decision-band span {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.score-panel strong {
+    color: var(--gold);
+    font-size: 56px;
+}
+
+.score-panel p {
+    font-weight: 800;
+}
+
+.empty-state {
+    padding: 34px;
+    display: none;
+}
+
+.empty-state h2 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: var(--text-light);
+    margin-bottom: 22px;
+}
+
+.report-content {
+    display: none;
+}
+
+.metric-grid,
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    padding: 22px;
+}
+
+.metric-card strong,
+.decision-band strong {
+    color: var(--gold);
+    font-size: 24px;
+}
+
+.decision-band {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.details-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.detail-card,
+.recommendations {
+    padding: 26px;
+}
+
+.detail-card h2,
+.section-heading h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+dt {
+    color: var(--muted);
+}
+
+dd {
+    font-weight: 800;
+    text-align: right;
+}
+
+.recommendations {
+    margin-bottom: 20px;
+}
+
+.recommendations li {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 13px 22px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.primary-btn {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.primary-btn:hover {
+    background: var(--gold-dark);
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+    color: var(--white);
+}
+
+@media (max-width: 850px) {
+    header,
+    .report-hero,
+    .actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header {
+        padding: 18px 24px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .score-panel {
+        width: 100%;
+    }
+
+    .metric-grid,
+    .decision-band,
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actions,
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        text-align: center;
+    }
+}
